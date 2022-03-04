@@ -1,0 +1,19 @@
+name: Action_Workflow
+
+on: Push
+
+jobs:
+  Build:
+   runs-on: ubuntu-latest
+   steps:
+     - name: git_Action
+       uses: actions/checkout@v1
+     - name: List files
+       run: |
+        pwd
+        ls -a 
+     - name: simple js action
+       id: Wish
+       uses: actions/hello-world-javascript-action@v1
+       with: 
+        who-to-greet: Siva
